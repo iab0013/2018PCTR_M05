@@ -72,6 +72,26 @@ public class Billiards extends JFrame {
 		}
 	}
 
+	private class ThreadBall extends Thread {
+		
+		private Ball ball;
+		public ThreadBall(Ball pelota){
+			this.ball=pelota;
+		}
+		
+		public void run(){
+			while(running){
+				try{
+					ball.move();
+					board.repaint();
+					Thread.sleep(6);
+				}catch(InterruptedException e){
+					System.err.println("Sleeping Thread Interrupted");
+				}
+			}
+		}
+	}
+
 	public static void main(String[] args) {
 		new Billiards();
 	}
