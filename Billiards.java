@@ -19,8 +19,11 @@ public class Billiards extends JFrame {
 	private Board board;
 
 	// TODO update with number of group label. See practice statement.
-	private final int N_BALL = 2;
-	private Ball[] balls;
+	private final int N_BALL = 8;
+	private Ball[] balls = new Ball[N_BALL]; //bolas
+	private ThreadBall[] threadBalls = new ThreadBall[N_BALL];
+
+	private volatile boolean running = false;
 
 	public Billiards() {
 
