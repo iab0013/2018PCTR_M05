@@ -39,6 +39,7 @@ public class Ball {
 		reflect();
 		
 		//TODO Check postcondition
+		assert x>Board.LEFTBOARD && x<Board.RIGHTBOARD && y>Board.TOPBOARD && y<Board.BOTTOMBOARD : "Violacion del invariante.";
 	}
 
 	private void reflect() {
