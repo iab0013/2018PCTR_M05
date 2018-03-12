@@ -1,3 +1,5 @@
+package p01;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -74,8 +76,8 @@ public class Billiards extends JFrame {
 			
 			for (int i = 0; i<N_BALL; i++){
 				hilo = new ThreadBall(balls[i]);
-				threadBalls[i] = hilo;
-				threadBalls[i].start();
+				listaHilos[i] = hilo;
+				listaHilos[i].start();
 			}
 		}
 	}
